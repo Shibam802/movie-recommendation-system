@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineMatch — AI Movie Recommendations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+<!-- NOISE OVERLAY -->
+<div class="noise"></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">CineMatch</span>
+    </div>
+    <nav class="nav">
+      <button class="nav-btn active" data-view="home">Discover</button>
+      <button class="nav-btn" data-view="history">History</button>
+      <button class="nav-btn" data-view="popular">Trending</button>
+      <button class="nav-btn" data-view="admin">Admin</button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="view-home">
+  <div class="hero-bg">
+    <div class="film-strip film-strip-1"></div>
+    <div class="film-strip film-strip-2"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Powered by Machine Learning</p>
+    <h1 class="hero-title">Find Your<br/><em>Next Obsession</em></h1>
+    <p class="hero-sub">Type a movie you love. Our AI finds what you'll watch next.</p>
+
+    <div class="search-box">
+      <div class="search-inner">
+        <span class="search-icon">⌕</span>
+        <input
+          type="text"
+          id="movieInput"
+          class="search-input"
+          placeholder="e.g. Inception, The Dark Knight…"
+          autocomplete="off"
+        />
+        <button class="search-btn" id="searchBtn">
+          <span class="btn-text">Recommend</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+      <div class="autocomplete-list" id="autocompleteList"></div>
+    </div>
+
+    <div class="quick-picks">
+      <span class="quick-label">Try:</span>
+      <button class="pill" data-movie="The Dark Knight">The Dark Knight</button>
+      <button class="pill" data-movie="Inception">Inception</button>
+      <button class="pill" data-movie="Batman Begins">Batman Begins</button>
+      <button class="pill" data-movie="Interstellar">Interstellar</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section" id="resultsSection" style="display:none">
+  <div class="container">
+    <div class="results-header">
+      <div>
+        <p class="results-eyebrow">Because you liked</p>
+        <h2 class="results-title" id="resultsMovieTitle">—</h2>
+      </div>
+      <button class="clear-btn" id="clearBtn">New Search ↺</button>
+    </div>
+    <div class="cards-grid" id="cardsGrid"></div>
+  </div>
+</section>
+
+<!-- HISTORY VIEW -->
+<section class="page-view" id="view-history" style="display:none">
+  <div class="container">
+    <h2 class="page-title">Search <em>History</em></h2>
+    <div id="historyList" class="history-list"></div>
+  </div>
+</section>
+
+<!-- POPULAR VIEW -->
+<section class="page-view" id="view-popular" style="display:none">
+  <div class="container">
+    <h2 class="page-title">Trending <em>Searches</em></h2>
+    <div id="popularList" class="popular-grid"></div>
+  </div>
+</section>
+
+<!-- ADMIN VIEW -->
+<section class="page-view" id="view-admin" style="display:none">
+  <div class="container">
+    <h2 class="page-title">Admin <em>Panel</em></h2>
+    <div class="stats-grid" id="statsGrid"></div>
+    <div class="train-box">
+      <h3>Train / Retrain Model</h3>
+      <p>Place <code>tmdb_5000_movies.csv</code> and <code>tmdb_5000_credits.csv</code> inside the <code>data/</code> folder, then click below.</p>
+      <button class="train-btn" id="trainBtn">⚙ Train Model</button>
+      <div class="train-status" id="trainStatus"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- LOADING OVERLAY -->
+<div class="loading-overlay" id="loadingOverlay" style="display:none">
+  <div class="spinner">
+    <div class="reel"></div>
+    <p>Analyzing your taste…</p>
+  </div>
+</div>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
