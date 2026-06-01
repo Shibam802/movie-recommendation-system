@@ -1,6 +1,11 @@
 # 🎬 CineMatch — AI Movie Recommendation System
 
 > A full-stack, deployment-ready movie recommendation web app powered by Machine Learning — built for placement showcase.
+<img width="1913" height="973" alt="image" src="https://github.com/user-attachments/assets/fe20f3fe-01a0-435d-9397-4b156dfa061e" />
+<img width="1912" height="976" alt="image" src="https://github.com/user-attachments/assets/d42df891-7cec-44f6-80ac-3ae87319fccc" />
+<img width="1909" height="976" alt="image" src="https://github.com/user-attachments/assets/59d942eb-44d7-4729-a208-fa3857b84352" />
+<img width="1909" height="605" alt="image" src="https://github.com/user-attachments/assets/568d345f-f324-455e-9c59-95eb7894665a" />
+<img width="1908" height="977" alt="image" src="https://github.com/user-attachments/assets/93b03409-90e7-4b08-b23a-e4c9e6c80b98" />
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=flat-square&logo=python)
 ![Flask](https://img.shields.io/badge/Flask-3.0.3-black?style=flat-square&logo=flask)
